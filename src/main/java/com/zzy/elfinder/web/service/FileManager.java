@@ -77,7 +77,6 @@ public class FileManager implements ElfinderService{
 		}
 	}
 
-	@Override
 	public TreeResponse parents(String target) throws IOException {
 		//获得volumnid和当前路径
 		String[] strs=HashUtil.decode(target);
@@ -100,7 +99,6 @@ public class FileManager implements ElfinderService{
 		rsp.setTree(tree);
 		return rsp;
 	}
-	@Override
 	public AddedResponse mkfile(String target, String name,boolean isdir) throws IOException {
 		//取得目标文件夹路径
 		String[] strs=HashUtil.decode(target);
@@ -116,7 +114,6 @@ public class FileManager implements ElfinderService{
 		rsp.getAdded().add(ElFile.getInstance(strs[0],filePath));
 		return rsp;
 	}
-	@Override
 	public AddedResponse rename(String target, String name) throws IOException {
 		//取得目标文件路径
 		String[] strs=HashUtil.decode(target);
@@ -130,7 +127,6 @@ public class FileManager implements ElfinderService{
 		rsp.addRemoved(target);
 		return rsp;
 	}
-	@Override
 	public AddedResponse upload(String target, MultipartFile[] files) throws IOException {
 		AddedResponse rsp=new AddedResponse();
 		//获得目标文件夹路径
@@ -144,7 +140,6 @@ public class FileManager implements ElfinderService{
 		//返回结果
 		return rsp;
 	}
-	@Override
 	public void download(String target, Boolean download,
 			HttpServletResponse response) throws IOException {
 		//获得目标文件路径
@@ -161,7 +156,6 @@ public class FileManager implements ElfinderService{
 		}
 		IOUtils.copy(new FileInputStream(f),response.getOutputStream());
 	}
-	@Override
 	public AddedResponse remove(String[] targets) throws IOException {
 		AddedResponse rsp=new AddedResponse();
 		for(String target:targets){
@@ -183,7 +177,6 @@ public class FileManager implements ElfinderService{
 		f.delete();
 		rsp.addRemoved(HashUtil.encode(volumnid, path));
 	}
-	@Override
 	public AddedResponse paste(String dst, String[] targets, Boolean cut)
 			throws IOException {
 		AddedResponse rsp=new AddedResponse();
@@ -233,7 +226,6 @@ public class FileManager implements ElfinderService{
 			rsp.getAdded().add(ElFile.getInstance(volumnid,newPath));
 		}
 	}
-	@Override
 	public Map<String, Map<String, String>> tmb(String[] targets) {
 		Map<String,Map<String,String>> result=new HashMap<String,Map<String,String>>();
 		Map<String,String> images=new HashMap<String,String>();
@@ -244,7 +236,6 @@ public class FileManager implements ElfinderService{
 		result.put("images", images);
 		return result;
 	}
-	@Override
 	public Map<String, Long> size(String[] targets) throws IOException {
 		long result=0;
 		for(String target:targets){
@@ -270,7 +261,6 @@ public class FileManager implements ElfinderService{
 		}
 		return size;
 	}
-	@Override
 	public Map<String, String> getContent(String target) throws IOException {
 		//get file path
 		String[] strs=HashUtil.decode(target);
@@ -282,7 +272,6 @@ public class FileManager implements ElfinderService{
 		result.put("content", new String(out.toByteArray(),"utf-8"));
 		return result;
 	}
-	@Override
 	public Map<String, String> dim(String target) throws IOException {
 		//获取图像路径
 		String[] strs=HashUtil.decode(target);
@@ -294,7 +283,6 @@ public class FileManager implements ElfinderService{
 		result.put("dim", dim);
 		return result;
 	}
-	@Override
 	public AddedResponse duplicate(String[] targets) throws IOException {
 		AddedResponse rsp=new AddedResponse();
 		for(String target:targets){
@@ -322,7 +310,6 @@ public class FileManager implements ElfinderService{
 			}
 		}
 	}
-	@Override
 	public Map<String, ElFile[]> editContent(String target,
 			String content) throws IOException {
 		String[] strs=HashUtil.decode(target);
@@ -332,7 +319,6 @@ public class FileManager implements ElfinderService{
 		map.put("changed", new ElFile[]{ElFile.getInstance(target)});
 		return map;
 	}
-	@Override
 	public Map<String, List<ElFile>> search(String condition) throws IOException {
 		List<ElFile> list=new ArrayList<ElFile>();
 		File root=new File(Config.ROOT_PATH);
@@ -360,7 +346,6 @@ public class FileManager implements ElfinderService{
 			}
 		}
 	}
-	@Override
 	public TreeResponse subfolders(String target) throws IOException {
 		List<ElFile> list=new ArrayList<ElFile>();
 		String[] strs=HashUtil.decode(target);
@@ -374,7 +359,6 @@ public class FileManager implements ElfinderService{
 		rsp.setTree(list);
 		return rsp;
 	}
-	@Override
 	public Map<String, List<String>> ls(String target) throws IOException {
 		List<String> list=new ArrayList<String>();
 		String[] strs=HashUtil.decode(target);
@@ -388,7 +372,6 @@ public class FileManager implements ElfinderService{
 		map.put("list", list);
 		return map;
 	}
-	@Override
 	public Map<String, ElFile[]> changeImage(String target, String mode,
 			int width, int height, int x, int y, double degree)
 			throws IOException {
