@@ -14,11 +14,6 @@ public class AnotherTest {
     private AnotherTest() {
 
         System.out.print("this is a test");
-        System.out.print("this is a test");
-        System.out.print("this is a test");
-
-
-
 
     }
 }
