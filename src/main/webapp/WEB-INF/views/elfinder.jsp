@@ -13,7 +13,7 @@
 		<%--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>--%>
 		<script type="text/javascript" src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
 
-		<!-- elFinder CSS (REQUIRED) -->s
+		<!-- elFinder CSS (REQUIRED) -->
 		<link rel="stylesheet" type="text/css" media="screen" href="<s:url value='/static/elfinder/css/elfinder.min.css' />">
 		<link rel="stylesheet" type="text/css" media="screen" href="<s:url value='/static/elfinder/css/theme.css' />">
 
