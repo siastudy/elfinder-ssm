@@ -18,7 +18,6 @@ public class IndexController {
 	public String index(){
 
 		logger.info("hello IndexController");
-		System.out.print("hello.....");
 		return "elfinder";
 	}
 	@RequestMapping(value="forckeditor",method = RequestMethod.GET)
