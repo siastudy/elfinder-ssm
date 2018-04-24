@@ -14,7 +14,7 @@ public class AnotherTest {
     private AnotherTest() {
 
         System.out.print("this is a test");
-        logger.info("hello");
+
 
     }
 }
