@@ -1,5 +1,7 @@
 package test;
 
+import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
+
 public class HelloTest {
     private static HelloTest ourInstance = new HelloTest();
 
@@ -8,6 +10,9 @@ public class HelloTest {
     }
 
     private HelloTest() {
+
+
+        PropertyPlaceholderConfigurer config = new PropertyPlaceholderConfigurer();
 
 
 

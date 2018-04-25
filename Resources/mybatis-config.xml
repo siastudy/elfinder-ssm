@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD  Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <!--  <properties resources="jdbc.properties"></properties>  -->
+
+    <!-- 开启懒加载, 驼峰匹配等 -->
+    <!-- <settings>
+           <setting name =  ""></setting>
+    </settings> -->
+
+    <typeAliases>
+        <!-- <typeAlias  type=""/> -->
+        <!-- 定义 包扫描: 扫描包下面所有的类, 起的别名就是类的名字, 这样避免了为每一个实体类都设置各自的别名 -->
+        <package name="com.mybatis.dao"/>
+    </typeAliases>
+
+    <!--  <typeHandlers></typeHandlers> -->
+
+    <!-- <objectFactory  type=""></objectFactory> -->
+
+    <!-- 插件又叫拦截器, 在sql statements 和 数据库之间做功能的改变和增强 -->
+    <!-- 可以引用自定义的拦截器类 -->
+    <!-- <plugins></plugins>  -->
+
+    <!-- 配置数据路连接参数 -->
+  <!--  <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver"value="com.mysql.jdbc.Driver"/>
+                <property name="url"value="jdbc:mysql://localhost:3306/mybatis"/>
+                <property name="username"value="root"/>
+                <property name="password"value="mysql"/>
+            </dataSource>
+        </environment>
+    </environments>-->
+
+
+    <!-- mapper映射器 -->
+    <mappers>
+        <!-- resource: 对应xml文件路径 -->
+        <!-- <mapper  resource="/MybatisTest/src/main/java/com/mybatis/dao/UserDao.xml"  /> -->
+        <!-- class: 对应接口的全路径 -->
+        <mapper class="com.zzy.elfinder.web.dao.UserDao"></mapper>
+        <!--package name: 包名, 扫描包下面所有的mapper文件 -->
+        <!-- 缺点: 包的路又很多... 会用spring来整合 -->
+        <!-- <package  name="com.mybatis.dao"/> -->
+    </mappers>
+
+
+</configuration>
