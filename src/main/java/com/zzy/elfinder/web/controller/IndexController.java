@@ -18,6 +18,18 @@ public class IndexController {
 	public String index(){
 
 		logger.info("hello IndexController");
+
+		/*
+		logon check
+		* */
+
+
+
+
+
+
+
+
 		return "elfinder";
 	}
 	@RequestMapping(value="forckeditor",method = RequestMethod.GET)
