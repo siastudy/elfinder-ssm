@@ -5,8 +5,8 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 @RequestMapping(value = "/connector2")
 public class TestConnectorController {
-	Logger logger = LoggerFactory.getLogger(TestConnectorController.class);
+	Logger logger = Logger.getLogger(TestConnectorController.class);
 	@RequestMapping(method = RequestMethod.GET)
 	public void get(@RequestParam("cmd")String cmd,@RequestParam(value="target",required=false)String target,
 			HttpServletRequest request,HttpServletResponse response) throws IOException{
